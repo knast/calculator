@@ -1,24 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&family=Roboto:wght@300&family=Syncopate:wght@700&family=Unbounded:wght@600&display=swap');
+
+
 body {
     display:flex;
     justify-content:center;
     align-items:center;
+    background-color:#E5E7E7;
 }
 
 .interface {
     width:600px;
     height:600px;
-    border:3px solid black;
+    border:3px solid #8DB0B0;
     margin:200px;
     border-radius:11px;
     padding:30px 35px;
+    display:flex;
+    flex-direction:column;
+    background-color:#FCEDE3;
     
 }
 
 .number-display {
     width:90%;
-    height:60px;
+    height:70px;
     margin:0 auto;
-    border: 3px solid black;
+    border: 2px solid #8DB0B0;
+    background-color:white;
+    border-radius:8px;
 }
 
 .numbers-clear {
@@ -40,7 +49,17 @@ body {
 button {
     width:100px;
     height:100px;
+    border-radius:10px;
+    font-family:'Unbounded', sans-serif;
+    font-size:24px;
+    background-color:#E3FCFC;
+    border-color:#8DB0B0;
 }
+
+ button:hover {
+    transition:0.25s;
+    background-color:#8DB0B0;
+} 
 
 .clear-equals {
     width:360px;
@@ -56,3 +75,24 @@ button {
 .four-five-six, .seven-eight-nine, .clear-equals {
     margin-top: 15px;
 }
+
+.buttons {
+    display:flex;
+
+}
+
+.operation-btns {
+    display:flex;
+    flex-direction:column;
+    margin-top:45px;
+    margin-right: 60px;
+    gap:15px;
+    
+}
+
+.operation-btns > button {
+    width:150px;
+}
+
+
+
