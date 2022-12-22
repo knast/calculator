@@ -1,0 +1,1 @@
+The calculator which evaluates two numbers at the time. 
