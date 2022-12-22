@@ -10,7 +10,8 @@ body {
     border:3px solid black;
     margin:200px;
     border-radius:11px;
-    padding:17px
+    padding:30px 35px;
+    
 }
 
 .number-display {
@@ -21,12 +22,37 @@ body {
 }
 
 .numbers-clear {
-    display:grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows:repeat(3,100px);
-    gap:15px;
-    width:90%;
-    height:300px;
-    margin-left:28px;
-    margin-top:30px;
+    display:flex;
+    flex-direction:column;
+    width:80%;
+    padding:15px 30px;
+    margin-top: 30px;
+}
+
+.one-two-three, .four-five-six, .seven-eight-nine, .clear-equals {
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    gap:30px;
+}
+
+
+button {
+    width:100px;
+    height:100px;
+}
+
+.clear-equals {
+    width:360px;
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.clear-equals > button {
+    width:170px;
+}
+
+.four-five-six, .seven-eight-nine, .clear-equals {
+    margin-top: 15px;
 }
