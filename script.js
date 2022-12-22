@@ -60,39 +60,64 @@ function operate(operator,firstNumber, secondNumber) {
     }
 }
 
-let evaluation = [];
+let firstNumber = [];
 
 clearBtn.addEventListener('click', () => {
-    evaluation = [];
-    display.textContent = evaluation;
+    firstNumber = [];
+    display.textContent = firstNumber;
 })
 
 numberOne.addEventListener('click', () => {
-    evaluation.push(1);
-    const evaluationWithoutCommas = evaluation.join('');
-    display.textContent = evaluationWithoutCommas;
+    firstNumber.push(1);
+    const firstNumberWithoutCommas = firstNumber.join('');
+    display.textContent = firstNumberWithoutCommas;
 })
 
 numberTwo.addEventListener('click', () => {
-    evaluation.push(2);
-    const evaluationWithoutCommas = evaluation.join('');
-    display.textContent = evaluationWithoutCommas;
+    firstNumber.push(2);
+    const firstNumberWithoutCommas = firstNumber.join('');
+    display.textContent = firstNumberWithoutCommas;
 })
 
 numberThree.addEventListener('click', () => {
-    evaluation.push(3);
-    const evaluationWithoutCommas = evaluation.join('');
-    display.textContent = evaluationWithoutCommas;
+    firstNumber.push(3);
+    const firstNumberWithoutCommas = firstNumber.join('');
+    display.textContent = firstNumberWithoutCommas;
 })
 
 numberFour.addEventListener('click', () => {
-    evaluation.push(4);
-    const evaluationWithoutCommas = evaluation.join('');
-    display.textContent = evaluationWithoutCommas;
+    firstNumber.push(4);
+    const firstNumberWithoutCommas = firstNumber.join('');
+    display.textContent = firstNumberWithoutCommas;
 })
 
 numberFive.addEventListener('click', () => {
-    evaluation.push(5);
-    const evaluationWithoutCommas = evaluation.join('');
-    display.textContent = evaluationWithoutCommas;
+    firstNumber.push(5);
+    const firstNumberWithoutCommas = firstNumber.join('');
+    display.textContent = firstNumberWithoutCommas;
 })
+
+numberSix.addEventListener('click', () => {
+    firstNumber.push(6);
+    const firstNumberWithoutCommas = firstNumber.join('');
+    display.textContent = firstNumberWithoutCommas;
+})
+
+numberSeven.addEventListener('click', () => {
+    firstNumber.push(7);
+    const firstNumberWithoutCommas = firstNumber.join('');
+    display.textContent = firstNumberWithoutCommas;
+})
+
+numberEight.addEventListener('click', () => {
+    firstNumber.push(8);
+    const firstNumberWithoutCommas = firstNumber.join('');
+    display.textContent = firstNumberWithoutCommas;
+})
+
+numberNine.addEventListener('click', () => {
+    firstNumber.push(9);
+    const firstNumberWithoutCommas = firstNumber.join('');
+    display.textContent = firstNumberWithoutCommas;
+})
+
