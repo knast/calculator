@@ -11,17 +11,13 @@ function multiply(firstNumber, secondNumber) {
 }
 
 function divide(firstNumber, secondNumber) {
-    if(firstNumber == 0) {
-        return alert('ERROR');
-    } else {    
-        return firstNumber/secondNumber;
-    }
+    return firstNumber / secondNumber;
 }
 function operate(operator,firstNumber, secondNumber) {
     let sum;
     let subtraction;
     let multiplication;
-    let divide;
+    let divideNum;
     if(operator == '+') {
         sum = add(firstNumber,secondNumber);
         return sum;
@@ -32,8 +28,8 @@ function operate(operator,firstNumber, secondNumber) {
         multiplication = multiply(firstNumber,secondNumber);
         return multiplication;
     } else if(operator == '/') {
-        divide = divide(firstNumber, secondNumber);
-        return divide;
+        divideNum = divide(firstNumber, secondNumber);
+        return divideNum;
     }
 }
 
@@ -58,111 +54,214 @@ const subtractBtn = document.querySelector('.subtract');
 const multiplyBtn = document.querySelector('.multiply');
 const divideBtn = document.querySelector('.divide');
 
+const calcHistory = document.querySelector('.calc-history');
+
 const calculator = {
     firstNum: 0,
     secondNum: 0,
-    operatorSign: 'none'
+    operatorSign: 'none',
+    waitingForSecondOperand: false,
+    didTheCalc: false,
 }
 
-let forNumber = [];
-let forNumToStr;
-
-
+let forFirstNum = [];
+let forSecondNum = [];
+let forFirstNumStr;
+let forSecondNumStr;
+let forSecondOperand = calculator.waitingForSecondOperand;
+let evaluation;
 
 
 oneBtn.addEventListener('click', () => {
-    forNumber.push(1);
-    forNumToStr = forNumber.join('');
-    display.textContent = forNumToStr;
+    if(forSecondOperand === false) {
+        forFirstNum.push(1);
+        forFirstNumStr = forFirstNum.join('');
+        display.textContent = forFirstNumStr;
+
+    } else if (forSecondOperand === true) {
+        forSecondNum.push(1);
+        forSecondNumStr = forSecondNum.join('');
+        display.textContent = forSecondNumStr;
+    }
+    
 })
 
 twoBtn.addEventListener('click', () => {
-    forNumber.push(2);
-    forNumToStr = forNumber.join('');
-    display.textContent = forNumToStr;
+    if(forSecondOperand === false) {
+        forFirstNum.push(2);
+        forFirstNumStr = forFirstNum.join('');
+        display.textContent = forFirstNumStr;
+    } else if(forSecondOperand === true) {
+        forSecondNum.push(2);
+        forSecondNumStr = forSecondNum.join('');
+        display.textContent = forSecondNumStr;
+    }
 })
 
 threeBtn.addEventListener('click', () => {
-    forNumber.push(3);
-    forNumToStr = forNumber.join('');
-    display.textContent = forNumToStr;
+    if(forSecondOperand === false) {
+        forFirstNum.push(3);
+        forFirstNumStr = forFirstNum.join('');
+        display.textContent = forFirstNumStr;
+    } else if (forSecondOperand === true) {
+        forSecondNum.push(3);
+        forSecondNumStr = forSecondNum.join('');
+        display.textContent = forSecondNumStr;
+    }
 })
 
 fourBtn.addEventListener('click', () => {
-    forNumber.push(4);
-    forNumToStr = forNumber.join('');
-    display.textContent = forNumToStr;
+    if(forSecondOperand === false) {
+        forFirstNum.push(4);
+        forFirstNumStr = forFirstNum.join('');
+        display.textContent = forFirstNumStr;
+    } else if (forSecondOperand === true) {
+        forSecondNum.push(4);
+        forSecondNumStr = forSecondNum.join('');
+        display.textContent = forSecondNumStr;
+    }
 })
 
 fiveBtn.addEventListener('click', () => {
-    forNumber.push(5);
-    forNumToStr = forNumber.join('');
-    display.textContent = forNumToStr;
+    if(forSecondOperand === false) {
+        forFirstNum.push(5);
+        forFirstNumStr = forFirstNum.join('');
+        display.textContent = forFirstNumStr;
+    } else if (forSecondOperand === true) {
+        forSecondNum.push(5);
+        forSecondNumStr = forSecondNum.join('');
+        display.textContent = forSecondNumStr;
+    }
 })
 
 sixBtn.addEventListener('click', () => {
-    forNumber.push(6);
-    forNumToStr = forNumber.join('');
-    display.textContent = forNumToStr;
+    if(forSecondOperand === false) {
+        forFirstNum.push(6);
+        forFirstNumStr = forFirstNum.join('');
+        display.textContent = forFirstNumStr;
+    } else if (forSecondOperand === true) {
+        forSecondNum.push(6);
+        forSecondNumStr = forSecondNum.join('');
+        display.textContent = forSecondNumStr;
+    }
 })
 
 sevenBtn.addEventListener('click', () => {
-    forNumber.push(7);
-    forNumToStr = forNumber.join('');
-    display.textContent = forNumToStr;
+    if(forSecondOperand === false) {
+        forFirstNum.push(7);
+        forFirstNumStr = forFirstNum.join('');
+        display.textContent = forFirstNumStr;
+    } else if (forSecondOperand === true) {
+        forSecondNum.push(7);
+        forSecondNumStr = forSecondNum.join('');
+        display.textContent = forSecondNumStr;
+    }
 })
 
 eightBtn.addEventListener('click', () => {
-    forNumber.push(8);
-    forNumToStr = forNumber.join('');
-    display.textContent = forNumToStr;
+    if(forSecondOperand === false) {
+        forFirstNum.push(8);
+        forFirstNumStr = forFirstNum.join('');
+        display.textContent = forFirstNumStr;
+    } else if (forSecondOperand === true) {
+        forSecondNum.push(8);
+        forSecondNumStr = forSecondNum.join('');
+        display.textContent = forSecondNumStr;
+    }
 })
 
 nineBtn.addEventListener('click', () => {
-    forNumber.push(9);
-    forNumToStr = forNumber.join('');
-    display.textContent = forNumToStr;
+    if(forSecondOperand === false) {
+        forFirstNum.push(9);
+        forFirstNumStr = forFirstNum.join('');
+        display.textContent = forFirstNumStr;
+    } else if (forSecondOperand === true) {
+        forSecondNum.push(9);
+        forSecondNumStr = forSecondNum.join('');
+        display.textContent = forSecondNumStr;
+    }
 })
 
 
 
 plusBtn.addEventListener('click', () => {
-    calculator.firstNum = Number(forNumToStr);
-    forNumber = [];
+    display.textContent = '';
+    calculator.firstNum = Number(forFirstNumStr);
     calculator.operatorSign = '+';
-    display.textContent = [];
+    forFirstNum = [];
+    forSecondOperand = true;
+    if(didTheCalc === 'true') {
+        calculator.operatorSign = '+';
+        calculator.firstNum = Number(evaluation);
+        forSecondOperand = true;
+        
+    }
+
     
 })
 
 subtractBtn.addEventListener('click', () => {
-    calculator.firstNum = Number(forNumToStr);
-    forNumber = [];
+    display.textContent = '';
+    calculator.firstNum = Number(forFirstNumStr);
     calculator.operatorSign = '-';
-    display.textContent = [];
+    forFirstNum = [];
+    forSecondOperand = true;
+    if(didTheCalc === 'true') {
+        calculator.operatorSign = '-';
+        calculator.firstNum = Number(evaluation);
+        forSecondOperand = true;
+        
+    }
 })
 
 multiplyBtn.addEventListener('click', () => {
-    calculator.firstNum = Number(forNumToStr);
-    forNumber = [];
+    display.textContent = '';
+    calculator.firstNum = Number(forFirstNumStr);
     calculator.operatorSign = '*';
-    display.textContent = [];
+    forFirstNum = [];
+    forSecondOperand = true;
+    if(didTheCalc === 'true') {
+        calculator.operatorSign = '*';
+        calculator.firstNum = Number(evaluation);
+        forSecondOperand = true;
+        
+    }
 })
 
 divideBtn.addEventListener('click', () => {
-    calculator.firstNum = Number(forNumToStr);
-    forNumber = [];
+    display.textContent = '';
+    calculator.firstNum = Number(forFirstNumStr);
     calculator.operatorSign = '/';
-    display.textContent = [];
+    forFirstNum = [];
+    forSecondOperand = true;
+    if(didTheCalc === 'true') {
+        calculator.operatorSign = '/';
+        calculator.firstNum = Number(evaluation);
+        forSecondOperand = true;
+        
+    }
 })
 
-
+clearBtn.addEventListener('click', () => {
+    forFirstNum = [];
+    forSecondNum = [];
+    calculator.firstNum = 0;
+    calculator.secondNum = 0;
+    display.textContent = ''
+    calcHistory.textContent = ``;
+    evaluation = 0;
+})
 
 equalsBtn.addEventListener('click', () => {
-    calculator.secondNum = Number(forNumToStr);
-
-    let evaluation = operate(calculator.operatorSign, calculator.firstNum, calculator.secondNum);
+    calculator.secondNum = Number(forSecondNumStr);
+    evaluation = operate(calculator.operatorSign, calculator.firstNum, calculator.secondNum);
+    calculator.didTheCalc = true;
+    forSecondOperand = false;
+    forFirstNum = [];
+    forSecondNum = [];
+    forFirstNumStr = evaluation.toString();
+    display.textContent = forFirstNumStr;
     
-    display.textContent = evaluation;
     
     
 })
