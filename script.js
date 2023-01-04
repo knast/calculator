@@ -190,6 +190,7 @@ plusBtn.addEventListener('click', () => {
     calculator.operatorSign = '+';
     forFirstNum = [];
     forSecondOperand = true;
+    calcHistory.textContent = `${calculator.firstNum} ${calculator.operatorSign}`;
     if(didTheCalc === 'true') {
         calculator.operatorSign = '+';
         calculator.firstNum = Number(evaluation);
@@ -206,6 +207,7 @@ subtractBtn.addEventListener('click', () => {
     calculator.operatorSign = '-';
     forFirstNum = [];
     forSecondOperand = true;
+    calcHistory.textContent = `${calculator.firstNum} ${calculator.operatorSign}`;
     if(didTheCalc === 'true') {
         calculator.operatorSign = '-';
         calculator.firstNum = Number(evaluation);
@@ -220,6 +222,7 @@ multiplyBtn.addEventListener('click', () => {
     calculator.operatorSign = '*';
     forFirstNum = [];
     forSecondOperand = true;
+    calcHistory.textContent = `${calculator.firstNum} ${calculator.operatorSign}`;
     if(didTheCalc === 'true') {
         calculator.operatorSign = '*';
         calculator.firstNum = Number(evaluation);
@@ -234,6 +237,7 @@ divideBtn.addEventListener('click', () => {
     calculator.operatorSign = '/';
     forFirstNum = [];
     forSecondOperand = true;
+    calcHistory.textContent = `${calculator.firstNum} ${calculator.operatorSign}`;
     if(didTheCalc === 'true') {
         calculator.operatorSign = '/';
         calculator.firstNum = Number(evaluation);
@@ -260,7 +264,9 @@ equalsBtn.addEventListener('click', () => {
     forFirstNum = [];
     forSecondNum = [];
     forFirstNumStr = evaluation.toString();
+    calcHistory.textContent = `${evaluation} ${calculator.operatorSign}`;
     display.textContent = forFirstNumStr;
+
     
     
     
